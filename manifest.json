@@ -1,0 +1,29 @@
+{
+  "name": "Catify websites",
+  "description": "Cat browser extension.",
+  "version": "0.0.1",
+  "permissions": ["storage"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/cat16.png",
+      "32": "icons/cat32.png",
+      "48": "icons/cat48.png",
+      "128": "icons/cat128.png"
+    },
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+    "matches": [ //match patterns must be listed
+        "http://*/*",
+        "https://*/*"
+        ],
+    "js": ["content.js"],
+    "run_at": "document_end"
+    }
+  ],
+  "manifest_version": 2
+}
